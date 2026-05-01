@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil - Portfolio KOKOT Clara</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    #accueil.home-hero {
+      min-height: 100vh;
+      padding: 112px 0 72px;
+      align-items: center;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at var(--hero-x, 50%) var(--hero-y, 42%), rgba(120, 228, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 50% 52%, rgba(125, 125, 255, 0.13), transparent 34%),
+        linear-gradient(180deg, rgba(6, 8, 22, 0), rgba(6, 8, 22, 0.42));
+    }
+
+    #accueil.home-hero::before,
+    #accueil.home-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    #accueil.home-hero::before {
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at center, black 16%, transparent 72%);
+      opacity: 0.34;
+      animation: heroGridDrift 18s linear infinite;
+    }
+
+    #accueil.home-hero::after {
+      background:
+        linear-gradient(115deg, transparent 20%, rgba(120, 228, 255, 0.1) 49%, transparent 51%, transparent 80%),
+        repeating-radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 17px);
+      opacity: 0.16;
+      mix-blend-mode: screen;
+      animation: heroSignal 9s ease-in-out infinite;
+    }
+
+    .home-hero-shell {
+      min-height: calc(100vh - 184px);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      perspective: 1200px;
+    }
+
+    .home-hero-content {
+      position: relative;
+      width: min(980px, 100%);
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out;
+      will-change: transform;
+    }
+
+    .home-hero-content::before {
+      content: "";
+      position: absolute;
+      inset: -12% -6%;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(circle at var(--local-x, 50%) var(--local-y, 50%), rgba(120, 228, 255, 0.2), rgba(125, 125, 255, 0.09) 34%, transparent 66%);
+      filter: blur(8px);
+      opacity: 0.9;
+      transition: opacity 0.35s ease;
+    }
+
+    .home-kicker {
+      justify-content: center;
+      margin-bottom: 22px;
+      animation: homeFadeUp 0.9s cubic-bezier(.17,.84,.44,1) 0.05s both;
+    }
+
+    .home-kicker::after {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .home-title {
+      position: relative;
+      margin: 0 0 26px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4.8rem, 14vw, 13rem);
+      line-height: 0.78;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 26px rgba(120, 228, 255, 0.16),
+        0 24px 70px rgba(0, 0, 0, 0.42);
+    }
+
+    .home-title span {
+      position: relative;
+      display: block;
+      opacity: 0;
+      transform: translateY(54px);
+      filter: blur(14px);
+      animation:
+        homeTitleReveal 1.1s cubic-bezier(.17,.84,.44,1) forwards,
+        homeGlitch 0.65s steps(2, end) 0.72s 1;
+    }
+
+    .home-title span:nth-child(2) {
+      animation-delay: 0.16s, 0.82s;
+    }
+
+    .home-title span:nth-child(3) {
+      animation-delay: 0.32s, 0.92s;
+      color: rgba(246, 248, 255, 0.82);
+    }
+
+    .home-title span::before,
+    .home-title span::after {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .home-title span::before {
+      color: rgba(120, 228, 255, 0.62);
+      transform: translateX(2px);
+      animation: homeGlitchLayer 0.55s steps(2, end) 0.78s 1;
+    }
+
+    .home-title span::after {
+      color: rgba(125, 125, 255, 0.58);
+      transform: translateX(-2px);
+      animation: homeGlitchLayer 0.5s steps(2, end) 0.84s 1 reverse;
+    }
+
+    .home-subtitle {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      color: rgba(246, 248, 255, 0.76);
+      font-size: clamp(1rem, 2vw, 1.28rem);
+      line-height: 1.7;
+      animation: homeFadeUp 0.9s cubic-bezier(.17,.84,.44,1) 0.72s both;
+    }
+
+    .home-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: homeFadeUp 0.9s cubic-bezier(.17,.84,.44,1) 0.9s both;
+    }
+
+    .home-btn {
+      min-width: 150px;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.055);
+      color: rgba(255, 255, 255, 0.92);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+      transition: transform 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease, background 0.32s ease;
+    }
+
+    .home-btn::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid currentColor;
+      border-right: 1px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.32s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateY(-5px);
+      border-color: rgba(120, 228, 255, 0.44);
+      background: rgba(255, 255, 255, 0.085);
+      box-shadow: 0 20px 58px rgba(0, 0, 0, 0.3), 0 0 34px rgba(120, 228, 255, 0.16);
+    }
+
+    .home-btn:hover::after {
+      transform: translateX(4px) rotate(45deg);
+    }
+
+    .home-btn-primary {
+      background: linear-gradient(135deg, rgba(120, 228, 255, 0.18), rgba(125, 125, 255, 0.16));
+    }
+
+    .home-light-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(88vw, 820px);
+      height: 1px;
+      z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(120, 228, 255, 0.72), rgba(255, 255, 255, 0.38), transparent);
+      box-shadow: 0 0 24px rgba(120, 228, 255, 0.42);
+      transform: translate(-50%, -50%) rotate(-8deg);
+      opacity: 0.48;
+      animation: homeLinePulse 4.8s ease-in-out infinite;
+    }
+
+    .home-scroll {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.48);
+      animation: homeFadeUp 0.9s cubic-bezier(.17,.84,.44,1) 1.08s both;
+    }
+
+    .home-scroll span {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 11px;
+    }
+
+    .home-scroll i {
+      width: 1px;
+      height: 38px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(120, 228, 255, 0.78), rgba(255, 255, 255, 0.08));
+      animation: homeScrollLine 1.9s ease-in-out infinite;
+    }
+
+    @keyframes homeTitleReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes homeFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+        filter: blur(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes homeGlitch {
+      0%, 100% { transform: translateY(0); }
+      28% { transform: translate(2px, -1px); }
+      42% { transform: translate(-2px, 1px); }
+      58% { transform: translate(1px, 0); }
+    }
+
+    @keyframes homeGlitchLayer {
+      0%, 100% { opacity: 0; clip-path: inset(0 0 0 0); }
+      18% { opacity: 0.7; clip-path: inset(12% 0 72% 0); }
+      44% { opacity: 0.45; clip-path: inset(62% 0 18% 0); }
+      68% { opacity: 0.55; clip-path: inset(36% 0 42% 0); }
+    }
+
+    @keyframes heroGridDrift {
+      from { background-position: 0 0; }
+      to { background-position: 52px 52px; }
+    }
+
+    @keyframes heroSignal {
+      0%, 100% { opacity: 0.1; transform: translateY(0); }
+      50% { opacity: 0.2; transform: translateY(-8px); }
+    }
+
+    @keyframes homeLinePulse {
+      0%, 100% { opacity: 0.26; transform: translate(-50%, -50%) rotate(-8deg) scaleX(0.88); }
+      50% { opacity: 0.56; transform: translate(-50%, -50%) rotate(-8deg) scaleX(1); }
+    }
+
+    @keyframes homeScrollLine {
+      0%, 100% { transform: scaleY(0.72); opacity: 0.45; }
+      50% { transform: scaleY(1); opacity: 0.9; }
+    }
+
+    @media (max-width: 768px) {
+      #accueil.home-hero {
+        padding: 104px 0 72px;
+      }
+
+      .home-hero-shell {
+        min-height: calc(100vh - 176px);
+      }
+
+      .home-title {
+        font-size: clamp(4rem, 18vw, 7rem);
+        line-height: 0.84;
+      }
+
+      .home-subtitle {
+        font-size: 1rem;
+      }
+
+      .home-btn {
+        min-width: 142px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #accueil.home-hero::before,
+      #accueil.home-hero::after,
+      .home-title span,
+      .home-title span::before,
+      .home-title span::after,
+      .home-kicker,
+      .home-subtitle,
+      .home-actions,
+      .home-light-line,
+      .home-scroll,
+      .home-scroll i {
+        animation: none;
+      }
+
+      .home-title span,
+      .home-kicker,
+      .home-subtitle,
+      .home-actions,
+      .home-scroll {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise"></div>
+
+  <!-- ========================= -->
+  <!-- HEADER -->
+  <!-- ========================= -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-top">Portfolio BTS SIO SISR</span>
+        <span class="brand-name">KOKOT Clara</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="bts-sio.html">BTS SIO</a>
+        <a href="stage.html">Stage</a>
+        <a href="veille.html">Veille Technologique</a>
+        <a href="projets.html">Projet</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="bts-sio.html">BTS SIO</a>
+      <a href="stage.html">Stage</a>
+      <a href="veille.html">Veille Technologique</a>
+      <a href="projets.html">Projet</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+    <section class="hero home-hero" id="accueil">
+      <div class="container home-hero-shell">
+        <div class="home-hero-content" id="homeHeroTitle">
+          <div class="home-light-line" aria-hidden="true"></div>
+          <div class="kicker home-kicker">Portfolio - BTS SIO SISR - Clara KOKOT</div>
+
+          <h1 class="home-title" aria-label="Clara Kokot Portfolio">
+            <span data-text="CLARA">CLARA</span>
+            <span data-text="KOKOT">KOKOT</span>
+            <span data-text="PORTFOLIO">PORTFOLIO</span>
+          </h1>
+
+          <p class="home-subtitle">
+            Étudiante BTS SIO SISR — Réseaux, Développement & IA
+          </p>
+
+          <div class="home-actions" aria-label="Navigation principale">
+            <a class="home-btn home-btn-primary" href="apropos.html">Explorer</a>
+            <a class="home-btn" href="projets.html">Voir mes projets</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="home-scroll" href="#footer" aria-label="Faire défiler vers le bas">
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+    <footer class="footer" id="footer">
+      <div class="container footer-content reveal">
+        <p>Portfolio de KOKOT Clara - BTS SIO SISR</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    const homeHero = document.getElementById("accueil");
+    const homeHeroTitle = document.getElementById("homeHeroTitle");
+
+    if (homeHero && homeHeroTitle) {
+      homeHero.addEventListener("mousemove", (event) => {
+        const rect = homeHero.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const px = x / rect.width;
+        const py = y / rect.height;
+        const rotateY = (px - 0.5) * 7;
+        const rotateX = (0.5 - py) * 5;
+
+        homeHero.style.setProperty("--hero-x", `${px * 100}%`);
+        homeHero.style.setProperty("--hero-y", `${py * 100}%`);
+        homeHeroTitle.style.setProperty("--local-x", `${px * 100}%`);
+        homeHeroTitle.style.setProperty("--local-y", `${py * 100}%`);
+        homeHeroTitle.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      homeHero.addEventListener("mouseleave", () => {
+        homeHero.style.setProperty("--hero-x", "50%");
+        homeHero.style.setProperty("--hero-y", "42%");
+        homeHeroTitle.style.setProperty("--local-x", "50%");
+        homeHeroTitle.style.setProperty("--local-y", "50%");
+        homeHeroTitle.style.transform = "rotateX(0deg) rotateY(0deg)";
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille Technologique - KOKOT Clara</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="veille-page">
+  <div class="progress-bar"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-top">Portfolio BTS SIO SISR</span>
+        <span class="brand-name">KOKOT Clara</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="bts-sio.html">BTS SIO</a>
+        <a href="stage.html">Stage</a>
+        <a href="veille.html">Veille Technologique</a>
+        <a href="projets.html">Projet</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="bts-sio.html">BTS SIO</a>
+      <a href="stage.html">Stage</a>
+      <a href="veille.html">Veille Technologique</a>
+      <a href="projets.html">Projet</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section veille-simple-hero">
+      <div class="container">
+        <div class="veille-simple-hero-grid reveal">
+          <div class="veille-simple-copy">
+            <div class="section-label">Veille Technologique</div>
+            <h1>Les IA génératives de visages réalistes</h1>
+            <p>
+              Cette veille présente le fonctionnement des intelligences artificielles capables
+              de générer des visages très réalistes, leur évolution, leurs avantages et leurs
+              inconvénients comme les fake news, les deepfakes et l'usurpation d'identité.
+            </p>
+          </div>
+
+          <div class="veille-simple-visual">
+            <img
+              src="images/hero-visage.png"
+              alt="Illustration d'un visage généré par intelligence artificielle"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section veille-code-section">
+      <div class="container">
+        <div class="veille-code-status reveal">
+          <div class="veille-code-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>veille_status.js</p>
+          </div>
+
+          <div class="veille-code-body" aria-label="En cours de préparation">
+            <p class="code-output">&gt; En cours de préparation<span class="code-cursor"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content reveal">
+        <p>Portfolio de KOKOT Clara - BTS SIO SISR</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

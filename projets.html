@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets - KOKOT Clara</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- EFFETS GLOBAUX -->
+  <div class="progress-bar"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise"></div>
+
+  <!-- MENU / NAVIGATION GLOBALE -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-top">Portfolio BTS SIO SISR</span>
+        <span class="brand-name">KOKOT Clara</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="bts-sio.html">BTS SIO</a>
+        <a href="stage.html">Stage</a>
+        <a href="veille.html">Veille Technologique</a>
+        <a href="projets.html">Projet</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="bts-sio.html">BTS SIO</a>
+      <a href="stage.html">Stage</a>
+      <a href="veille.html">Veille Technologique</a>
+      <a href="projets.html">Projet</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE / SECTION : PROJETS -->
+    <section class="section" id="projets">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Projet</div>
+          <h2>Mes deux projets principaux.</h2>
+          <p>
+            Cette partie est organisée en deux blocs distincts afin de présenter
+            chacun de tes projets avec leur description et leur rapport.
+          </p>
+        </div>
+
+        <!-- SOUS-BLOC : PROJET 1 -->
+        <article class="project-card reveal">
+          <div id="projet1" class="project-id">Projet 1</div>
+          <div class="project-content">
+            <h3>Titre du projet 1</h3>
+            <p class="project-subtitle">Présentation du projet</p>
+            <p>
+              Tu peux écrire ici la présentation complète de ton premier projet :
+              contexte, objectif, besoins, outils utilisés, déroulement, résultats
+              obtenus et compétences mobilisées.
+            </p>
+
+            <div class="contact-links project-links">
+              <button class="cv-modal-trigger" type="button" data-report-modal-open>Voir le rapport</button>
+              <button class="cv-modal-trigger" type="button" data-report-modal-open>Voir plus</button>
+            </div>
+          </div>
+          <div class="project-visual visual-1"></div>
+        </article>
+
+        <!-- SOUS-BLOC : PROJET 2 -->
+        <article class="project-card reveal">
+          <div id="projet2" class="project-id">Projet 2</div>
+          <div class="project-content">
+            <h3>Titre du projet 2</h3>
+            <p class="project-subtitle">Présentation du projet</p>
+            <p>
+              Tu peux écrire ici la présentation complète de ton second projet :
+              contexte, organisation, développement, mise en place, résultats
+              et compétences acquises.
+            </p>
+
+            <div class="contact-links project-links">
+              <button class="cv-modal-trigger" type="button" data-report-modal-open>Voir le rapport</button>
+              <button class="cv-modal-trigger" type="button" data-report-modal-open>Voir plus</button>
+            </div>
+          </div>
+          <div class="project-visual visual-3"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PIED DE PAGE / CONTACT -->
+    <footer class="footer">
+      <div class="container footer-content reveal">
+        <p>Portfolio de KOKOT Clara · BTS SIO SISR</p>
+        <p>© 2026 · Tous droits réservés</p>
+      </div>
+    </footer>
+  </main>
+
+  <div class="cv-modal report-modal" id="reportModal" aria-hidden="true">
+    <button class="cv-modal-backdrop" type="button" data-report-modal-close aria-label="Fermer la fenetre"></button>
+
+    <div class="cv-modal-panel" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+      <button class="cv-modal-close" type="button" data-report-modal-close aria-label="Fermer">x</button>
+
+      <div class="cv-modal-kicker">Rapport</div>
+      <h2 class="cv-modal-title" id="reportModalTitle" aria-label="En cours d'ajout">
+        <span data-text="EN COURS">EN COURS</span>
+        <span data-text="D'AJOUT">D'AJOUT</span>
+      </h2>
+      <p>Le rapport du projet sera disponible prochainement.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
