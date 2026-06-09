@@ -148,15 +148,6 @@
 
           <article class="veille-detail-panel reveal">
             <div class="card-label">Etape 3</div>
-            <h3>GAN et diffusion</h3>
-            <p>
-              Avec les GAN, un generateur cree une image et un discriminateur verifie si elle parait
-              reelle. Avec les modeles de diffusion, l'image est reconstruite peu a peu a partir d'un bruit.
-            </p>
-          </article>
-
-          <article class="veille-detail-panel reveal">
-            <div class="card-label">Etape 4</div>
             <h3>Role du prompt</h3>
             <p>
               Le prompt est le texte donne a l'IA. Il permet de guider le style, le cadrage, la lumiere,
@@ -174,71 +165,6 @@
           </p>
         </div>
 
-        <div class="section-head reveal veille-inline-head">
-          <div class="section-label">Comparaison</div>
-          <h2>Comparer plusieurs outils avec le meme prompt</h2>
-          <p>
-            Cette partie permet de montrer qu'un meme prompt peut produire des rendus differents
-            selon l'outil utilise.
-          </p>
-        </div>
-
-        <div class="veille-carousel-prompt reveal">
-          <span>Prompt utilise</span>
-          <p>Portrait photo ultra realiste d'une femme, peau naturelle, lumiere douce, arriere-plan simple.</p>
-        </div>
-
-        <div class="veille-carousel reveal">
-          <button class="veille-carousel-btn prev" type="button" aria-label="Image precedente">‹</button>
-
-          <div class="veille-carousel-track" id="veilleCarousel">
-            <article class="veille-carousel-slide active">
-              <div class="veille-carousel-image">
-                <img src="images/hero-visage.png" alt="Exemple de rendu avec ChatGPT" />
-              </div>
-              <div class="veille-carousel-caption">
-                <span>Outil</span>
-                <h3>ChatGPT</h3>
-                <p>Rendu equilibre et realiste, avec une bonne comprehension du prompt.</p>
-              </div>
-            </article>
-
-            <article class="veille-carousel-slide">
-              <div class="veille-carousel-image">
-                <img src="images/hero-visage.png" alt="Exemple de rendu avec Adobe" />
-              </div>
-              <div class="veille-carousel-caption">
-                <span>Outil</span>
-                <h3>Adobe</h3>
-                <p>Style souvent propre et adapte a une logique de creation visuelle.</p>
-              </div>
-            </article>
-
-            <article class="veille-carousel-slide">
-              <div class="veille-carousel-image">
-                <img src="images/hero-visage.png" alt="Exemple de rendu avec Canva" />
-              </div>
-              <div class="veille-carousel-caption">
-                <span>Outil</span>
-                <h3>Canva</h3>
-                <p>Solution accessible, utile pour generer rapidement un visuel simple a presenter.</p>
-              </div>
-            </article>
-
-            <article class="veille-carousel-slide">
-              <div class="veille-carousel-image">
-                <img src="images/hero-visage.png" alt="Exemple de rendu avec Banana 2" />
-              </div>
-              <div class="veille-carousel-caption">
-                <span>Outil</span>
-                <h3>Banana 2</h3>
-                <p>Interressant pour montrer que le meme prompt peut donner un rendu different selon le modele.</p>
-              </div>
-            </article>
-          </div>
-
-          <button class="veille-carousel-btn next" type="button" aria-label="Image suivante">›</button>
-        </div>
       </div>
     </section>
 
@@ -378,36 +304,8 @@
   </main>
 
   <script src="script.js"></script>
-  <script>
-    (() => {
-      const carousel = document.getElementById("veilleCarousel");
-      if (!carousel) return;
-
-      const slides = Array.from(carousel.querySelectorAll(".veille-carousel-slide"));
-      const prevBtn = document.querySelector(".veille-carousel-btn.prev");
-      const nextBtn = document.querySelector(".veille-carousel-btn.next");
-
-      let current = 0;
-
-      function showSlide(index) {
-        slides.forEach((slide, slideIndex) => {
-          slide.classList.toggle("active", slideIndex === index);
-        });
-      }
-
-      prevBtn?.addEventListener("click", () => {
-        current = (current - 1 + slides.length) % slides.length;
-        showSlide(current);
-      });
-
-      nextBtn?.addEventListener("click", () => {
-        current = (current + 1) % slides.length;
-        showSlide(current);
-      });
-
-      showSlide(current);
-    })();
-  </script>
 </body>
+</html>
+
 </html>
 
