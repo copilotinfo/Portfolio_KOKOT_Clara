@@ -28,7 +28,7 @@
 
       <nav class="nav-links">
         <a href="index.html">Accueil</a>
-        <a href="apropos.html">À propos</a>
+        <a href="apropos.html">A propos</a>
         <a href="bts-sio.html">BTS SIO</a>
         <a href="stage.html">Stage</a>
         <a href="veille.html">Veille Technologique</a>
@@ -40,7 +40,7 @@
 
     <div class="mobile-menu">
       <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
+      <a href="apropos.html">A propos</a>
       <a href="bts-sio.html">BTS SIO</a>
       <a href="stage.html">Stage</a>
       <a href="veille.html">Veille Technologique</a>
@@ -54,37 +54,318 @@
         <div class="veille-simple-hero-grid reveal">
           <div class="veille-simple-copy">
             <div class="section-label">Veille Technologique</div>
-            <h1>Les IA génératives de visages réalistes</h1>
+            <h1>Les IA generatives de visages realistes</h1>
             <p>
-              Cette veille présente le fonctionnement des intelligences artificielles capables
-              de générer des visages très réalistes, leur évolution, leurs avantages et leurs
-              inconvénients comme les fake news, les deepfakes et l'usurpation d'identité.
+              Cette veille presente le fonctionnement des intelligences artificielles capables
+              de generer des visages tres realistes, leur evolution, leurs avantages et leurs
+              inconvenients comme les fake news, les deepfakes et l'usurpation d'identite.
             </p>
+
+            <div class="veille-simple-nav">
+              <a href="#presentation">Presentation</a>
+              <a href="#fonctionnement">Fonctionnement</a>
+              <a href="#evolution">Evolution</a>
+              <a href="#avantages">Avantages</a>
+              <a href="#inconvenients">Inconvenients</a>
+            </div>
           </div>
 
           <div class="veille-simple-visual">
             <img
               src="images/hero-visage.png"
-              alt="Illustration d'un visage généré par intelligence artificielle"
+              alt="Illustration d'un visage genere par intelligence artificielle"
             />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section veille-code-section">
+    <section class="section" id="presentation">
       <div class="container">
-        <div class="veille-code-status reveal">
-          <div class="veille-code-top">
-            <span></span>
-            <span></span>
-            <span></span>
-            <p>veille_status.js</p>
+        <div class="section-head reveal">
+          <div class="section-label">Presentation</div>
+          <h2>De quoi parle cette veille ?</h2>
+          <p>Une introduction simple au sujet avant d'entrer dans le detail technique.</p>
+        </div>
+
+        <div class="veille-simple-cards">
+          <article class="veille-simple-card reveal">
+            <div class="card-label">Sujet</div>
+            <h3>Les IA generatives</h3>
+            <p>
+              Les IA generatives sont capables de creer du contenu automatiquement comme des
+              textes, des sons, des videos ou des images a partir de donnees d'apprentissage.
+            </p>
+          </article>
+
+          <article class="veille-simple-card reveal">
+            <div class="card-label">Choix du theme</div>
+            <h3>Les visages realistes</h3>
+            <p>
+              J'ai choisi ce theme car les visages generes par IA montrent tres bien les
+              progres technologiques actuels, mais aussi les risques lies a la tromperie visuelle.
+            </p>
+          </article>
+
+          <article class="veille-simple-card reveal">
+            <div class="card-label">Problematique</div>
+            <h3>Pourquoi ce sujet est important ?</h3>
+            <p>
+              Plus une image parait reelle, plus il devient difficile de savoir si elle est
+              authentique. Cela pose des questions de confiance, de securite et d'information.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fonctionnement">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Fonctionnement</div>
+          <h2>Comment ces IA fonctionnent en detail</h2>
+          <p>Une explication etape par etape pour comprendre la creation d'une image.</p>
+        </div>
+
+        <div class="veille-detail-layout">
+          <article class="veille-detail-panel reveal">
+            <div class="card-label">Etape 1</div>
+            <h3>Apprentissage des donnees</h3>
+            <p>
+              L'IA est entrainee avec un grand nombre d'images. Elle observe les formes du visage,
+              la position des yeux, la texture de la peau, la lumiere, les cheveux et les expressions.
+            </p>
+          </article>
+
+          <article class="veille-detail-panel reveal">
+            <div class="card-label">Etape 2</div>
+            <h3>Deep learning</h3>
+            <p>
+              Grace aux reseaux de neurones, l'IA apprend progressivement a reconnaitre et reproduire
+              des caracteristiques visuelles complexes jusqu'a obtenir un rendu coherent.
+            </p>
+          </article>
+
+          <article class="veille-detail-panel reveal">
+            <div class="card-label">Etape 3</div>
+            <h3>GAN et diffusion</h3>
+            <p>
+              Avec les GAN, un generateur cree une image et un discriminateur verifie si elle parait
+              reelle. Avec les modeles de diffusion, l'image est reconstruite peu a peu a partir d'un bruit.
+            </p>
+          </article>
+
+          <article class="veille-detail-panel reveal">
+            <div class="card-label">Etape 4</div>
+            <h3>Role du prompt</h3>
+            <p>
+              Le prompt est le texte donne a l'IA. Il permet de guider le style, le cadrage, la lumiere,
+              le genre de visage et le niveau de realisme souhaite.
+            </p>
+          </article>
+        </div>
+
+        <div class="veille-simple-highlight reveal">
+          <div class="card-label">Resume</div>
+          <h3>En resume</h3>
+          <p>
+            L'IA ne copie pas simplement une image existante. Elle apprend a partir de nombreuses donnees
+            puis genere un nouveau resultat qui ressemble a une vraie photographie.
+          </p>
+        </div>
+
+        <div class="section-head reveal veille-inline-head">
+          <div class="section-label">Comparaison</div>
+          <h2>Comparer plusieurs outils avec le meme prompt</h2>
+          <p>
+            Cette partie permet de montrer qu'un meme prompt peut produire des rendus differents
+            selon l'outil utilise.
+          </p>
+        </div>
+
+        <div class="veille-carousel-prompt reveal">
+          <span>Prompt utilise</span>
+          <p>Portrait photo ultra realiste d'une femme, peau naturelle, lumiere douce, arriere-plan simple.</p>
+        </div>
+
+        <div class="veille-carousel reveal">
+          <button class="veille-carousel-btn prev" type="button" aria-label="Image precedente">‹</button>
+
+          <div class="veille-carousel-track" id="veilleCarousel">
+            <article class="veille-carousel-slide active">
+              <div class="veille-carousel-image">
+                <img src="images/hero-visage.png" alt="Exemple de rendu avec ChatGPT" />
+              </div>
+              <div class="veille-carousel-caption">
+                <span>Outil</span>
+                <h3>ChatGPT</h3>
+                <p>Rendu equilibre et realiste, avec une bonne comprehension du prompt.</p>
+              </div>
+            </article>
+
+            <article class="veille-carousel-slide">
+              <div class="veille-carousel-image">
+                <img src="images/hero-visage.png" alt="Exemple de rendu avec Adobe" />
+              </div>
+              <div class="veille-carousel-caption">
+                <span>Outil</span>
+                <h3>Adobe</h3>
+                <p>Style souvent propre et adapte a une logique de creation visuelle.</p>
+              </div>
+            </article>
+
+            <article class="veille-carousel-slide">
+              <div class="veille-carousel-image">
+                <img src="images/hero-visage.png" alt="Exemple de rendu avec Canva" />
+              </div>
+              <div class="veille-carousel-caption">
+                <span>Outil</span>
+                <h3>Canva</h3>
+                <p>Solution accessible, utile pour generer rapidement un visuel simple a presenter.</p>
+              </div>
+            </article>
+
+            <article class="veille-carousel-slide">
+              <div class="veille-carousel-image">
+                <img src="images/hero-visage.png" alt="Exemple de rendu avec Banana 2" />
+              </div>
+              <div class="veille-carousel-caption">
+                <span>Outil</span>
+                <h3>Banana 2</h3>
+                <p>Interressant pour montrer que le meme prompt peut donner un rendu different selon le modele.</p>
+              </div>
+            </article>
           </div>
 
-          <div class="veille-code-body" aria-label="En cours de préparation">
-            <p class="code-output">&gt; En cours de préparation<span class="code-cursor"></span></p>
-          </div>
+          <button class="veille-carousel-btn next" type="button" aria-label="Image suivante">›</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evolution">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Evolution</div>
+          <h2>L'evolution des IA generatives</h2>
+          <p>Cette partie reste volontairement simple et uniquement en texte pour la presentation.</p>
+        </div>
+
+        <div class="veille-text-timeline">
+          <article class="veille-text-step reveal">
+            <span>Debuts</span>
+            <h3>Des resultats encore imparfaits</h3>
+            <p>
+              Au debut, les visages generes par IA etaient souvent flous, peu naturels et faciles a reconnaitre.
+              On observait regulierement des erreurs sur les yeux, les dents, les cheveux ou les proportions.
+            </p>
+          </article>
+
+          <article class="veille-text-step reveal">
+            <span>Progression</span>
+            <h3>Une amelioration rapide</h3>
+            <p>
+              Avec l'augmentation des donnees et la puissance des modeles, les resultats sont devenus plus
+              coherents. Les details comme la lumiere, les ombres et la texture de la peau ont beaucoup progresse.
+            </p>
+          </article>
+
+          <article class="veille-text-step reveal">
+            <span>Aujourd'hui</span>
+            <h3>Un realisme tres avance</h3>
+            <p>
+              Aujourd'hui, certaines images generees sont tres difficiles a distinguer d'une vraie photo.
+              Cela montre la performance de ces IA, mais cela renforce aussi les risques de desinformation.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="avantages">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Avantages</div>
+          <h2>Les points positifs de ces IA</h2>
+          <p>Des usages utiles dans plusieurs domaines.</p>
+        </div>
+
+        <div class="veille-simple-cards">
+          <article class="veille-simple-card reveal">
+            <div class="card-label">Creation</div>
+            <h3>Production rapide</h3>
+            <p>
+              Ces outils permettent de creer rapidement des visuels realistes sans organiser une prise de vue complete.
+            </p>
+          </article>
+
+          <article class="veille-simple-card reveal">
+            <div class="card-label">Accessibilite</div>
+            <h3>Gain de temps</h3>
+            <p>
+              Ils rendent la creation d'images plus accessible pour les entreprises, les etudiants et les createurs.
+            </p>
+          </article>
+
+          <article class="veille-simple-card reveal">
+            <div class="card-label">Usages</div>
+            <h3>Plusieurs domaines</h3>
+            <p>
+              On peut les utiliser dans la communication, le marketing, la formation, le divertissement ou le design.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inconvenients">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Inconvenients</div>
+          <h2>Les risques et les limites</h2>
+          <p>Les progres techniques rendent aussi les abus plus faciles.</p>
+        </div>
+
+        <div class="veille-risks-simple">
+          <article class="veille-risk-simple-card reveal">
+            <div class="card-label">Fake news</div>
+            <h3>Diffusion de fausses informations</h3>
+            <p>
+              Une image realiste peut etre utilisee pour accompagner une information fausse et la rendre plus credible.
+            </p>
+          </article>
+
+          <article class="veille-risk-simple-card reveal">
+            <div class="card-label">Deepfake</div>
+            <h3>Manipulation visuelle</h3>
+            <p>
+              Les deepfakes permettent de faire croire qu'une personne a parle ou agi alors que le contenu est faux.
+            </p>
+          </article>
+
+          <article class="veille-risk-simple-card reveal">
+            <div class="card-label">Identite</div>
+            <h3>Usurpation d'image</h3>
+            <p>
+              Le visage d'une personne peut etre reproduit ou imite, ce qui pose des problemes de droit a l'image et de confiance.
+            </p>
+          </article>
+
+          <article class="veille-risk-simple-card reveal">
+            <div class="card-label">Ethique</div>
+            <h3>Perte de confiance</h3>
+            <p>
+              Plus les images generees ressemblent au reel, plus il devient difficile de verifier ce qui est vrai ou faux.
+            </p>
+          </article>
+        </div>
+
+        <div class="veille-simple-highlight veille-simple-highlight-warning reveal">
+          <div class="card-label">Conclusion</div>
+          <h3>Une technologie utile, mais a surveiller</h3>
+          <p>
+            Les IA generatives de visages realistes sont impressionnantes et efficaces, mais elles peuvent aussi
+            etre detournees. Il est donc important de comprendre leur fonctionnement et leurs consequences.
+          </p>
         </div>
       </div>
     </section>
@@ -97,5 +378,36 @@
   </main>
 
   <script src="script.js"></script>
+  <script>
+    (() => {
+      const carousel = document.getElementById("veilleCarousel");
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll(".veille-carousel-slide"));
+      const prevBtn = document.querySelector(".veille-carousel-btn.prev");
+      const nextBtn = document.querySelector(".veille-carousel-btn.next");
+
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("active", slideIndex === index);
+        });
+      }
+
+      prevBtn?.addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      });
+
+      nextBtn?.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      });
+
+      showSlide(current);
+    })();
+  </script>
 </body>
 </html>
+
